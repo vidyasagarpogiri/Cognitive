@@ -1,0 +1,2 @@
+#Batch Download from Google Cloud Storage
+gsutil rsync -d C:\Users\luopa\Desktop\Cognitive\azure_audioclips  gs://audio_files_bucket
