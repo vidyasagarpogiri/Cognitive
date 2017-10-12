@@ -1,0 +1,8 @@
+#Batch Download of Files from Azure Blob to Local Folder
+python C:\Users\luopa\Desktop\Cognitive\blobxfer.py eyc3blob eyc3file\speech C:\Users\luopa\Desktop\Cognitive\azure_audioclips --subscriptionid 37c3806c-273d-447f-8e65-52b5a9f8a1da --storageaccountkey 8lWwXYYTbRtpg02HRd/DiVrSfyF4xNqtGmUzIy1GkLLOG1tXsXGLZG2KbDCz3XerLM1xPV4nl62YgmhAYAAUTQ== --managementcert C:\Users\luopa\Desktop\Cognitive\Azure_Blob_Cert.cer --remoteresource . --download --fileshare
+
+#Batch Upload Files to Azure Blob:
+python C:\Users\luopa\Desktop\Cognitive\blobxfer.py synapsediag693 bootdiagnostics-pauline-b3337233-6ea6-4969-83fb-6c9aa4dc38f8 C:\Users\luopa\Desktop\Cognitive --subscriptionid 438f52a6-38d6-4dcd-964c-9c6d97b3877f438f52a6-38d6-4dcd-964c-9c6d97b3877f --storageaccountkey sIfK/fOUQePs/NI2eETgDUhXVrr+gNQ4/3Ni4hg0ObLGOBDbXytZLFbeWYUljTHJRqIDt5xYkyXWi47V2BdEdg== --managementcert C:\Users\luopa\Desktop\Cognitive\Azure_Blob_Cert.cer
+
+#Download files from Azure fire share using cmd command:
+python C:\Users\luopa\Desktop\Cognitive\blobxfer.py synapsediag693 testing C:\Users\luopa\Desktop\Cognitive --subscriptionid 438f52a6-38d6-4dcd-964c-9c6d97b3877f438f52a6-38d6-4dcd-964c-9c6d97b3877f --storageaccountkey sIfK/fOUQePs/NI2eETgDUhXVrr+gNQ4/3Ni4hg0ObLGOBDbXytZLFbeWYUljTHJRqIDt5xYkyXWi47V2BdEdg== --managementcert C:\Users\luopa\Desktop\Cognitive\Azure_Blob_Cert.cer --remoteresource New_Text_Document.txt --download --fileshare
