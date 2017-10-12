@@ -11,3 +11,10 @@ python C:\Users\luopa\Desktop\Cognitive\blobxfer.py synapsediag693 bootdiagnosti
 ```
 python C:\Users\luopa\Desktop\Cognitive\google_speech_streaming.py
 ```
+# Python Library
+- azure-storage
+- auzure-servicemanagement-legacy
+- azure-common
+- blobxfer
+- argparse
+- pydub
