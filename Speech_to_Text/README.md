@@ -32,4 +32,4 @@ python C:\Users\luopa\Desktop\Cognitive\transcribe2.py C:/Users/luopa/Desktop/Co
 3. Upload the result to Azure file storage using **upload_result_azure.py**
 
 # Reference
-Azure Blob Storage: https://docs.microsoft.com/en-us/azure/storage/blobs/storage-python-how-to-use-blob-storage
+Azure Blob Storage: https://docs.microsoft.com/en-us/azure/storage/files/storage-python-how-to-use-file-storage
