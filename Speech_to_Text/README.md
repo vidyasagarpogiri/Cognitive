@@ -11,6 +11,9 @@ python C:\Users\luopa\Desktop\Cognitive\blobxfer.py synapsediag693 bootdiagnosti
 ```
 python C:\Users\luopa\Desktop\Cognitive\google_speech_streaming.py
 ```
+- download_from_azure.py: Used for downloading audio files to local machine
+- upload_result_azure.py: Used for uploading the transcription results from local machine back to Azure file storage
+
 
 # Python Library
 - azure-storage
@@ -27,3 +30,6 @@ python C:\Users\luopa\Desktop\Cognitive\google_speech_streaming.py
 python C:\Users\luopa\Desktop\Cognitive\transcribe2.py C:/Users/luopa/Desktop/Cognitive/azure_audioclips
 ```
 3. Upload the result to Azure file storage using **upload_result_azure.py**
+
+# Reference
+Azure Blob Storage: https://docs.microsoft.com/en-us/azure/storage/blobs/storage-python-how-to-use-blob-storage
