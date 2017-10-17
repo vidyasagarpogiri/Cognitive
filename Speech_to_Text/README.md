@@ -25,7 +25,7 @@ python C:\Users\luopa\Desktop\Cognitive\google_speech_streaming.py
 
 # Process for Demo
 1. Use **download_from_azure.py** to fetch all files sitting in the target directory to a local directory
-2. Run **transcribe2.py** in Google Cloud SDK Shell to convert stereo .wav files to mono .wav files. In the meanwhile the mono files will be read in and being passed to google speech-to-text API. The results will be generated as .txt file for each audio files.
+2. Run **Transcribe_v1.py** in Google Cloud SDK Shell to convert stereo .wav files to mono .wav files. In the meanwhile the mono files will be read in and being passed to google speech-to-text API. The results will be generated as .txt file for each audio files.
 ```
 python C:\Users\luopa\Desktop\Cognitive\transcribe2.py C:/Users/luopa/Desktop/Cognitive/azure_audioclips
 ```
