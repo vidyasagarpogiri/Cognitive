@@ -29,6 +29,8 @@ from pydub import AudioSegment
 import wave
 import audioop
 import os
+import re
+import sys
 
 #AudioSegment.converter = 'C:/Users/luopa/bin/ffmpeg.exe'
 # [END import_libraries]
@@ -70,7 +72,10 @@ def transcribe_file(speech_file_directory):
             #[END migration_audio_config_file]
 
             #[START migration_sync_response]
-            response = client.recognize(config, audio)
+            try:
+                response = client.recognize(config, audio)
+            except:
+                pass
             #[END migration_sync_request]
             if len(response.results)==0:
                 continue
@@ -79,6 +84,18 @@ def transcribe_file(speech_file_directory):
                 for alternative in alternatives:
                     transcribe_result.append(alternative.transcript)
                 print(transcribe_result)
+
+            #[Writing output to txt]
+            user_name=re.findall('\__(.*?)\__', filename)
+            print(user_name[0])
+            if user_name[0]=='':
+                result_name=filename
+            else:
+                result_name=user_name[0]
+            result_file = open('C:/Users/luopa/Desktop/Cognitive/result/'+result_name+'.txt', 'w')
+            for item in transcribe_result:
+                result_file.write("%s\n" % item)
+
 
 
             #[END migration_sync_response]
@@ -118,7 +135,11 @@ def transcribe_gcs(gcs_uri):
             # [END migration_audio_config_file]
 
             # [START migration_sync_response]
-            response = client.recognize(config, audio)
+            try:
+                response = client.recognize(config, audio)
+            except Exception:
+                sys.exc_clear()
+
             # [END migration_sync_request]
             if len(response.results) == 0:
                 continue
