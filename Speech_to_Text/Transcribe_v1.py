@@ -31,10 +31,21 @@ import audioop
 import os
 import re
 import sys
+import distance
+import pandas as pd
 
-#AudioSegment.converter = 'C:/Users/luopa/bin/ffmpeg.exe'
 # [END import_libraries]
 
+# [Start read_script]
+script_file = open("C:/Users/luopa/Desktop/Cognitive/script.txt", "r", encoding="utf-8")
+script=script_file.read().encode('utf-8').decode('utf-8-sig')
+script_file.close()
+script_list=script.split()
+# [END read_script]
+
+# [Start output_dictionary]
+d = {}
+# [END output_dictionary]
 
 # [START def_transcribe_file]
 def transcribe_file(speech_file_directory):
@@ -51,7 +62,6 @@ def transcribe_file(speech_file_directory):
     directory = os.fsencode(speech_file_directory)
     for file in os.listdir(directory):
         filename = os.fsdecode(file)
-        print(filename)
         if filename.endswith(".wav"):
             transcribe_result=[]
             stereo = wave.open(directory.decode("utf-8") + "/" + filename, 'rb')
@@ -83,9 +93,13 @@ def transcribe_file(speech_file_directory):
                 alternatives = response.results[0].alternatives
                 for alternative in alternatives:
                     transcribe_result.append(alternative.transcript)
-                print(transcribe_result)
 
-            #[Writing output to txt]
+            # [START accuracy_test]
+            transcribe_result_list = ' '.join(transcribe_result).split()
+            accuracy = 1-distance.nlevenshtein(script_list,transcribe_result_list)
+            # [END accuracy_test]
+
+            # [START Writing output to txt]
             user_name=re.findall('\__(.*?)\__', filename)
             print(user_name[0])
             if user_name[0]=='':
@@ -95,8 +109,8 @@ def transcribe_file(speech_file_directory):
             result_file = open('C:/Users/luopa/Desktop/Cognitive/result/'+result_name+'.txt', 'w')
             for item in transcribe_result:
                 result_file.write("%s\n" % item)
-
-
+            d[result_name] = accuracy
+            # [END Writing output to txt]
 
             #[END migration_sync_response]
         #[END def_transcribe_file]
@@ -104,6 +118,11 @@ def transcribe_file(speech_file_directory):
         #[START def_transcribe_gcs]
         else:
             continue
+    # [Start dict_to_csv]
+    data = pd.DataFrame.from_dict(d,orient='index')
+    data.to_csv('C:/Users/luopa/Desktop/Cognitive/result/final_result.csv')
+    # [END dict_to_csv]
+
 
 
 def transcribe_gcs(gcs_uri):
@@ -148,6 +167,11 @@ def transcribe_gcs(gcs_uri):
                 for alternative in alternatives:
                     transcribe_result.append(alternative.transcript)
                 print(transcribe_result)
+
+                # [START evaluate_accuracy]
+                result_string = ' '.join(transcribe_result)
+
+                # [END evaluate_accuracy]
 
 
                 # [END migration_sync_response]
