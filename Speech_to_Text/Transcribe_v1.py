@@ -33,14 +33,17 @@ import re
 import sys
 import distance
 import pandas as pd
-
+import string
+from nltk.corpus import stopwords
 # [END import_libraries]
 
 # [Start read_script]
 script_file = open("C:/Users/luopa/Desktop/Cognitive/script.txt", "r", encoding="utf-8")
-script=script_file.read().encode('utf-8').decode('utf-8-sig')
+script=script_file.read().encode('utf-8').decode('utf-8-sig').lower()
 script_file.close()
-script_list=script.split()
+translator = script.maketrans('', '', string.punctuation)
+script_list=script.translate(translator).split()
+filtered_script = [word for word in script_list if word not in stopwords.words('english')]
 # [END read_script]
 
 # [Start output_dictionary]
@@ -62,6 +65,7 @@ def transcribe_file(speech_file_directory):
     directory = os.fsencode(speech_file_directory)
     for file in os.listdir(directory):
         filename = os.fsdecode(file)
+        print(filename)
         if filename.endswith(".wav"):
             transcribe_result=[]
             stereo = wave.open(directory.decode("utf-8") + "/" + filename, 'rb')
@@ -92,24 +96,28 @@ def transcribe_file(speech_file_directory):
             else:
                 alternatives = response.results[0].alternatives
                 for alternative in alternatives:
-                    transcribe_result.append(alternative.transcript)
+                    transcribe_result.append(alternative.transcript.lower())
 
             # [START accuracy_test]
             transcribe_result_list = ' '.join(transcribe_result).split()
+            filtered_result = [word for word in transcribe_result_list if word not in stopwords.words('english')]
+
             accuracy = 1-distance.nlevenshtein(script_list,transcribe_result_list)
+            exact_match = len(set(filtered_script).intersection(filtered_result))/len(set(filtered_script))
             # [END accuracy_test]
 
             # [START Writing output to txt]
-            user_name=re.findall('\__(.*?)\__', filename)
-            print(user_name[0])
-            if user_name[0]=='':
-                result_name=filename
+            user_country = re.findall('\__(.*?)\__', filename)
+            result_name = filename.split('@')[0]
+            print(user_country[0])
+            if user_country[0]=='':
+                result_country=filename
             else:
-                result_name=user_name[0]
+                result_country=user_country[0]
             result_file = open('C:/Users/luopa/Desktop/Cognitive/result/'+result_name+'.txt', 'w')
             for item in transcribe_result:
                 result_file.write("%s\n" % item)
-            d[result_name] = accuracy
+            d[result_name] = [accuracy,exact_match,result_country]
             # [END Writing output to txt]
 
             #[END migration_sync_response]
@@ -120,6 +128,7 @@ def transcribe_file(speech_file_directory):
             continue
     # [Start dict_to_csv]
     data = pd.DataFrame.from_dict(d,orient='index')
+    data.columns = ['overall_accuracy','exact_match_accuracy','country']
     data.to_csv('C:/Users/luopa/Desktop/Cognitive/result/final_result.csv')
     # [END dict_to_csv]
 
