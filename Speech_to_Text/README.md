@@ -1,4 +1,4 @@
-# Code Usage
+# Code Usage (Google + IBM API)
 - Transcibe_v1.py: Batch processing of the .wav audio files from local folder using google speech-to-text API, use it in gcloud shell, the <transcribe_gcs(gcs_uri)> function is not working properly yet
 ```
 python C:\Users\luopa\Desktop\Cognitive\transcribe2.py C:/Users/luopa/Desktop/Cognitive/azure_audioclips
@@ -14,6 +14,42 @@ python C:\Users\luopa\Desktop\Cognitive\google_speech_streaming.py
 - download_from_azure.py: Used for downloading audio files to local machine
 - upload_result_azure.py: Used for uploading the transcription results from local machine back to Azure file storage
 
+# Code Usage - Microsoft Client Library
+- To use the client library, the download of Microsoft Visual Studio 2015 is necessary (2017 might throw error in the code)
+- Place the audio files (.wav) in the **path_to_client_library_download\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\bin\x86\Debug**
+- Use Visual Studio to open up SpeechToText-WPF-Sample-x86 solution file
+- Edit MainWindow.xaml.cs **WriteResponseResult** class code (refer to the corresponding code in Cognitive-Speech-STT-Windows-master folder) so that it writes the transcription output to the desired location as .txt file
+```
+        private void WriteResponseResult(SpeechResponseEventArgs e)
+        {
+            if (e.PhraseResponse.Results.Length == 0)
+            {
+                this.WriteLine("No phrase response is available.");
+            }
+            else
+            {
+                this.WriteLine("********* Final n-BEST Results *********");
+                using (StreamWriter w = File.AppendText(@"<path_to_output_txt_file>"))
+                {
+                    for (int i = 0; i < e.PhraseResponse.Results.Length; i++)
+                    {
+                        this.WriteLine(
+                            "[{0}] Confidence={1}, Text=\"{2}\"",
+                            i,
+                            e.PhraseResponse.Results[i].Confidence,
+                            e.PhraseResponse.Results[i].DisplayText);
+                        w.WriteLine(e.PhraseResponse.Results[i].DisplayText);
+                    }
+                }
+            }
+        }
+```
+- Edit app.config as following (refer to the corresponding code in Cognitive-Speech-STT-Windows-master folder) so that the application knows what file are we using for transcription and save
+```
+<add key="LongWaveFile" value="<name_of_auidio_file_to_transcribe>.wav" />
+```
+- Build Solution (x86 in this case)
+- Run solution
 
 # Python Library
 - azure-storage
