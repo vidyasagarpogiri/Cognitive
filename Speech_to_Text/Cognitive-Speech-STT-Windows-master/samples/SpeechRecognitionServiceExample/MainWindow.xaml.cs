@@ -598,7 +598,7 @@ namespace Microsoft.CognitiveServices.SpeechRecognition
             else
             {
                 this.WriteLine("********* Final n-BEST Results *********");
-                using (StreamWriter w = File.AppendText(@"C:\Users\Yongxuan Luo\Desktop\microsoft_result\will.ekselman@eyc3.com__Australia__.txt"))
+                using (StreamWriter w = File.AppendText(@"<file_path_to_output_file.txt>"))
                 {
                     for (int i = 0; i < e.PhraseResponse.Results.Length; i++)
                     {
