@@ -1,0 +1,17 @@
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\bin\x86\Debug\SpeechToText-WPF-Sample.exe.config
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\bin\x86\Debug\batman.wav
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\bin\x86\Debug\whatstheweatherlike.wav
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\bin\x86\Debug\SpeechToText-WPF-Sample.exe
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\bin\x86\Debug\SpeechToText-WPF-Sample.pdb
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\bin\x86\Debug\SpeechClient.dll
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\obj\x86\Debug\SpeechToText-WPF-Sample-x86.csprojResolveAssemblyReference.cache
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\obj\x86\Debug\MainWindow.baml
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\obj\x86\Debug\App.g.cs
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\obj\x86\Debug\SpeechToText-WPF-Sample_Content.g.cs
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\obj\x86\Debug\SpeechToText-WPF-Sample_MarkupCompile.cache
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\obj\x86\Debug\SpeechToText-WPF-Sample.g.resources
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\obj\x86\Debug\SpeechToText-WPF-Sample.exe
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\obj\x86\Debug\SpeechToText-WPF-Sample.pdb
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\bin\x86\Debug\Newtonsoft.Json.xml

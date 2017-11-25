@@ -1,0 +1,12 @@
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\bin\x86\Release\batman.wav
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\bin\x86\Release\whatstheweatherlike.wav
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\bin\x86\Release\SpeechToText-WPF-Sample.exe.config
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\bin\x86\Release\SpeechToText-WPF-Sample.exe
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\bin\x86\Release\SpeechClient.dll
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\obj\x86\Release\MainWindow.baml
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\obj\x86\Release\MainWindow.g.cs
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\obj\x86\Release\App.g.cs
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\obj\x86\Release\SpeechToText-WPF-Sample_Content.g.cs
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\obj\x86\Release\SpeechToText-WPF-Sample_MarkupCompile.cache
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\obj\x86\Release\SpeechToText-WPF-Sample.g.resources
+C:\Users\Yongxuan Luo\Downloads\Cognitive-Speech-STT-Windows-master\samples\SpeechRecognitionServiceExample\obj\x86\Release\SpeechToText-WPF-Sample.exe
