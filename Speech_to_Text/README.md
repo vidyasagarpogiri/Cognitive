@@ -1,5 +1,5 @@
 # Code Usage (Google + IBM API)
-- Transcibe_v1.py: Batch processing of the .wav audio files from local folder using google speech-to-text API, use it in gcloud shell, the <transcribe_gcs(gcs_uri)> function is not working properly yet
+- Transcibe_v1.py: Batch processing and writing transcription results of the .wav audio files from local folder using google speech-to-text API, use it in gcloud shell, the <transcribe_gcs(gcs_uri)> function is not working properly yet, various accuracy rate are also calculated
 ```
 python C:\Users\luopa\Desktop\Cognitive\transcribe2.py C:/Users/luopa/Desktop/Cognitive/azure_audioclips
 ```
@@ -13,6 +13,7 @@ python C:\Users\luopa\Desktop\Cognitive\google_speech_streaming.py
 ```
 - download_from_azure.py: Used for downloading audio files to local machine
 - upload_result_azure.py: Used for uploading the transcription results from local machine back to Azure file storage
+- transcribe_ibm.py: Used for batch processing and writing transcription results of the .wav audio (for both stereo and mono format) files from local folder using IBM Watson Speech API, various accuracy results are also calculated
 
 # Code Usage - Microsoft Client Library
 - To use the client library, the download of Microsoft Visual Studio 2015 is necessary (2017 might throw error in the code)
@@ -50,6 +51,9 @@ python C:\Users\luopa\Desktop\Cognitive\google_speech_streaming.py
 ```
 - Build Solution (x86 in this case)
 - Run solution
+
+-------------------------------------------------- Parsing Transcription Result ------------------------------------------------------
+- transcribe_microsoft.py: Analyze results of the transcription results from local folder using Microsoft Speech Client Library, various accuracy results are also calculated
 
 # Python Library
 - azure-storage
